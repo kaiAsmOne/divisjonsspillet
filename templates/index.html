@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Divisjonsspillet – Villmarksutgaven</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sancreek&family=Special+Elite&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="wrap">
+
+  <header>
+    <div class="badge">★</div>
+    <h1>Divisjonsspillet</h1>
+    <p class="subtitle">Oppstilt divisjon &mdash; villmarksutgaven</p>
+    <div class="rule"><span>✦</span></div>
+  </header>
+
+  <div class="scoreboard">
+    <div class="stat">
+      <span class="stat-label">Dollar</span>
+      <span class="stat-value" id="score">0</span>
+    </div>
+    <div class="stat">
+      <span class="stat-label">Riktige</span>
+      <span class="stat-value" id="correct-count">0</span>
+    </div>
+    <div class="stat">
+      <span class="stat-label">Bom</span>
+      <span class="stat-value" id="wrong-count">0</span>
+    </div>
+    <div class="stat">
+      <span class="stat-label">I strekk</span>
+      <span class="stat-value" id="streak">0</span>
+    </div>
+  </div>
+
+  <main class="game-card">
+    <div class="poster-pin left"></div>
+    <div class="poster-pin right"></div>
+
+    <div class="problem-area">
+      <div class="division-layout" id="division-layout">
+        <!-- built by JS -->
+      </div>
+    </div>
+
+    <div class="interaction-area" id="interaction-area">
+      <p class="prompt" id="prompt-text"></p>
+      <form id="answer-form" autocomplete="off">
+        <input type="number" id="answer-input" inputmode="numeric" min="0" max="9" required>
+        <button type="submit">Svar</button>
+      </form>
+    </div>
+
+    <div class="feedback" id="feedback"></div>
+
+    <div class="next-area" id="next-area" style="display:none;">
+      <button id="next-btn">Neste jobb →</button>
+    </div>
+
+  </main>
+
+  <footer>
+    <p>Fasiten kommer opp hvis du bommer, så du ser riktig fremgangsmåte.</p>
+  </footer>
+
+</div>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
